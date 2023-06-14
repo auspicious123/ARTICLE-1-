@@ -1,0 +1,159 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    color: #fff;
+    z-index: 999999;
+}
+.content .logo{
+    padding-top: 11px;
+    padding-right: 25px;
+}
+.wrapper nav {
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 40px;
+}
+
+nav .content {
+    display: flex;
+    align-items: center;
+}
+
+nav .content .links {
+    /* margin-left: 40px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.content .logo a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.content .links li {
+    list-style: none;
+    line-height: 70px;
+}
+
+.content .links li ,
+.content .links li label {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 9px 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.content .links li a,
+.content .links li label {
+    color: #fff;
+
+}
+
+.content .links li label {
+    display: none;
+}
+.searchicon{
+    /* padding-top: 5px; */
+    padding: 5px 0 0 100px;
+    transform: scale(1.5);
+}
+
+.content .links li a:hover{
+  text-decoration: none; /* Remove the default underline */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 2s;
+}
+
+.content .links li a:hover::after {
+  content: ""; 
+  position: absolute; 
+  bottom: -2px;
+  left: 0; 
+  width: 100%;
+  height: 3px; 
+  background-color: rgb(64, 123, 250);
+  transition: background-color 2s;
+  /* background: linear-gradient(to right, rgb(0, 58, 184), rgb(0, 81, 255));  */
+  margin-top: 4px; 
+}
+
+.wrapper .search-icon,
+.wrapper .menu-icon {
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 70px;
+    width: 70px;
+    text-align: center;
+}
+
+.wrapper .menu-icon {
+    display: none;
+}
+
+.wrapper #show-search:checked~.search-icon i::before {
+    content: "\f00d";
+}
+
+.wrapper .search-box {
+    position: absolute;
+    height: 100%;
+    max-width: calc(100% - 50px);
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.flex {
+    display: flex;
+}
+
+.title-font {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+.text-xl {
+    font-size: 1.375rem;
+}
+
+
+

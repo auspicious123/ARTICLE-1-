@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section id="newsletter-section"></section>
+
+    <script>
+      $(document).ready(() => {
+        $.get('http://13.53.142.82:5500/article/145', (data) => {
+          // Retrieve the data properties
+          const { title, image, description, quote, subheader, subheadings } = data;
+  
+          // Create the HTML structure
+          const newsletterSection = $('#newsletter-section');
+          const articleContainer = $('<div>').addClass('article-container');
+          const articleTitle = $('<h1>').text(title);
+          const articleImage = $('<img>').attr('src', image);
+          const articleDescription = $(description);
+          const articleQuote = $(quote);
+          const articleSubheader = $(subheader);
+  
+          // Append the main article elements
+          articleContainer.append(articleTitle, articleImage, articleDescription, articleQuote, articleSubheader);
+          newsletterSection.append(articleContainer);
+  
+          // Append the subheadings
+          subheadings.forEach((subheading) => {
+            const { sub_heading, image, description } = subheading;
+            const subheadingContainer = $('<div>').addClass('subheading-container');
+            const subheadingTitle = $('<h3>').text(sub_heading);
+            const subheadingImage = $('<img>').attr('src', image);
+            const subheadingDescription = $(description);
+  
+            // Append the subheading elements
+            subheadingContainer.append(subheadingTitle, subheadingImage, subheadingDescription);
+            newsletterSection.append(subheadingContainer);
+          });
+        })
+        .fail((error) => {
+          console.error('Error fetching data:', error);
+        });
+      });
+    </script>
+</body>
+</html>
